@@ -7,7 +7,7 @@
 
 class Core
 {
-    protected $currentController;
+    protected $currentController = 'pages';
     protected $currentMethod = 'index';
     protected $params = [];
 
@@ -17,15 +17,22 @@ class Core
 
         $url = $this->getUrl();
 
-        // look in controllers for first value
-        if(file_exists('../app/controllers/' . ucwords($url[0]). 'Controller.php'))
+        if($url)
         {
+            // look in controllers for first value
+            if(file_exists('../app/controllers/' . ucwords($url[0]). 'Controller.php'))
+            {
 
-            // if exists then set as controller
-            $this->currentController = ucwords($url[0] . 'Controller');
-            
-            unset($url[0]);
+                // if exists then set as controller
+                $this->currentController = ucwords($url[0]);
+                
+                unset($url[0]);
+            }
         }
+        
+
+        // append Controller to end of controller name for naming convention
+        $this->currentController = $this->currentController . 'Controller';
         // print_r($this->currentController);
 
         require_once '../app/controllers/' . $this->currentController . '.php';

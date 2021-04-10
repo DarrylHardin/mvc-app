@@ -3,12 +3,12 @@
     {
         public function __construct()
         {
-            echo 'pages loaded';
+            
         }
 
         public function index()
         {
-            $this->View('hello');
+            $this->View('index');
         }
 
         public function about($id = null)
