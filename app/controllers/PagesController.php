@@ -8,12 +8,18 @@
 
         public function index()
         {
-            $this->View('index');
+            $data = [
+                'title' => 'Welcome',
+            ];
+            $this->View('pages/index', $data);
         }
 
         public function about($id = null)
         {
-            echo ' about ' . $id;
+            $data = [
+                'title' => 'About',
+            ];
+            $this->View('pages/about', $data);
             
         }
     }
