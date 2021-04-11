@@ -8,7 +8,7 @@
         public function model($model)
         {
             //require model
-            require_once '../app/models' . $model . 'model.php';
+            require_once '../app/models/' . $model . '.php';
 
             // Instantiate model
             return new $model();
