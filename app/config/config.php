@@ -1,9 +1,9 @@
 <?php
     // DB params
     define('DB_HOST', 'localhost');
-    define('DB_USER', '_YOUR_USERNAME_');
-    define('DB_PASS', '_YOUR_PASS_');
-    define('DB_NAME', '_YOUR_DATABASE_NAME_');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+    define('DB_NAME', 'mvc_app');
     
     
     
@@ -13,7 +13,10 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     //URL root
-    define('URLROOT', '_YOUR_URL_');
+    define('URLROOT', 'http://mvc.local/');
 
     //Site Name
-    define('SITENAME', '_YOUR_SITE_NAME_');
+    define('SITENAME', 'MVC App');
+
+    //Version Name
+    define('APPVERSION', 'v1.0.0');
